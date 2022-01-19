@@ -10,7 +10,6 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
     <header>
       <img src="images/juliana.jpeg" alt="Juliana Gómez" class="header-img">
@@ -24,48 +23,73 @@
         </ul>
       </nav>
     </header>
-    <div class="intro">
-      Hola! Soy Juliana 👋 Soy Colombo-Canadiense, amo los gatos y tambien crear
-      cosas lindas para la web 😍 Después de estudiar comunicación social y
-      ciencia política en la universidad, trabajé varios años en mercadeo
-      digital hasta que aprendí a programar. Llevo un poco más de tres años
-      enfocándome en front end, específicamente en JavaScript y accesibilidad.
-      Sueño con una web donde todo el mundo pueda participar. Aquí puedes ver
-      algunos de mis proyectos recientes y también puedes contactarme por si
-      quieres hablar de tecnología, accesibilidad o gatos!
-      <div class="social-media">
-        <div>
-          <a href="https://twitter.com/gmzjuliana" target="_blank"
-            ><img src="images/twitter.png"
-          /></a>
-        </div>
-        <div>
-          <a href="https://github.com/gmzjuliana" target="_blank"
-            ><img src="images/github-logo.png"
-          /></a>
-        </div>
-        <div>
-          <a href="https://www.linkedin.com/in/gomezjuliana/" target="_blank"
-            ><img src="images/linkedin.png"
-          /></a>
-        </div>
-      </div>
-    </div>
+    <main>
+      <section>
+        <h2 class="header">Acerca de</h2>
+        <p class="intro">
+          Hola! Soy Juliana 👋 Soy Colombo-Canadiense, amo los gatos y tambien crear
+          cosas lindas para la web 😍 Después de estudiar comunicación social y
+          ciencia política en la universidad, trabajé varios años en mercadeo
+          digital hasta que aprendí a programar. Llevo un poco más de tres años
+          enfocándome en front end, específicamente en JavaScript y accesibilidad.
+          Sueño con una web donde todo el mundo pueda participar. Aquí puedes ver
+          algunos de mis proyectos recientes y también puedes contactarme por si
+          quieres hablar de tecnología, accesibilidad o gatos!
+        </p>
+        <ul class="social-media">
+          <li>
+            <a href="https://twitter.com/gmzjuliana" target="_blank"
+              ><img src="images/twitter.png" alt="Mi perfil en Twitter"/></a>
+          </li>
+          <li>
+            <a href="https://github.com/gmzjuliana" target="_blank"
+              ><img src="images/github-logo.png" alt="Mi perfil en GitHub"/></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/gomezjuliana/" target="_blank"
+              ><img src="images/linkedin.png" alt="Mi perfil en LinkedIn"/></a>
+          </li>
+        </ul>
+      </section>
 
-    <div class="carousel">
-      <div class="arrow arrow-left"></div>
-      <div class="window">
-        <div class="project-container">
-          <div class="project project1"></div>
-          <div class="project project2"></div>
-          <div class="project project3"></div>
-          <div class="project project4"></div>
-          <div class="project project5"></div>
+      <section>
+        <h2 class="header">Mis proyectos</h2>
+        <div class="carousel">
+          <div class="arrow arrow-left"></div>
+          <div class="window">
+            <ul class="project-container">
+              <li>
+                <button>
+                  <!-- we use button because we are not actually moving to a different web server and buttons are used to help the user interact with our page-->
+                  <img src="./images/project1.png" class="project project1" alt="Ejemplo de uno de mis proyectos">
+                </button>
+              </li>
+              <li>
+                <button>
+                  <img class="project project2" src="./images/project2.png" alt="Ejemplo de uno de mis proyectos">
+                </button>
+              </li>
+              <li>
+                <button>
+                  <img class="project project3" src="./images/project3.png" alt="Ejemplo de uno de mis proyectos">
+                </button>
+              </li>
+              <li>
+                <button>
+                  <img class="project project4" src="./images/project4.png" alt="Ejemplo de uno de mis proyectos">
+                </button>
+              </li>
+              <li>
+                <button>
+                  <img class="project project5" src="./images/project5.png" alt="Ejemplo de uno de mis proyectos">
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="arrow arrow-right"></div>
         </div>
-      </div>
-      <div class="arrow arrow-right"></div>
-    </div>
-
+      </section>
+    </main>
     <div class="contact-section">
       <div class="header">Contacto</div>
       <div class="form-container">
