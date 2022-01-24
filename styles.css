@@ -55,6 +55,23 @@ body, header, section {
   width: 100%;
 }
 
+.skip-link
+{
+  height: 0;
+}
+
+.skip-link:focus, .skip-link:active
+{
+  background-color: var(--verde);
+  border-radius: 5px;
+  color: var(--gris-oscuro);
+  font-family: var(--secondary-font);
+  margin: 16px 0 8px;
+  height: auto;
+  padding: 8px;
+  text-decoration: underline;
+}
+
 .header {
   color: var(--blanco);
   font-family: var(--main-font);
@@ -125,7 +142,6 @@ nav
   display: flex;
   justify-content: space-around;
   margin: 32px auto 0;
-  width: 20%;
 }
 
 .social-media li a
@@ -139,7 +155,8 @@ nav
 
 .social-link-text
 {
-  padding: 0 8px;
+  padding-right: 8px;
+  padding-left: 8px;
 }
 
 .carousel {
