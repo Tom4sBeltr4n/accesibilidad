@@ -55,7 +55,7 @@
       <section>
         <h2 class="header">Mis proyectos</h2>
         <div class="carousel">
-          <div class="arrow arrow-left"></div>
+          <button class="arrow arrow-left" aria-label="backward button"></button>
           <div class="window">
             <ul class="project-container">
               <li>
@@ -86,16 +86,16 @@
               </li>
             </ul>
           </div>
-          <div class="arrow arrow-right"></div>
+          <button aria-label="forward button" class="arrow arrow-right"></button>
         </div>
       </section>
     </main>
     <footer class="contact-section">
       <h2 class="header">Contacto</h2>
       <form class="form-container">
-        Nombre<input type="text" /> <br />
-        Correo<input type="text" /> <br />
-        <div class="message-input">Mensaje<input type="text" /> <br /></div>
+        Nombre<input type="text" aria-label="nombre"/> <br />
+        Correo<input type="text" aria-label="correo"/> <br />
+        <div class="message-input">Mensaje<input type="text" aria-label="mensaje" /> <br /></div>
         <button class="send-button">Enviar</button>
       </form>
     </footer>
