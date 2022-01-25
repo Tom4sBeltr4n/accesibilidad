@@ -256,6 +256,11 @@ nav
   border-radius: 50%;
 }
 
+.arrow:focus
+{
+  outline: solid 3px var(--verde);
+}
+
 .contact-section {
   align-items: center;
   background-color: var(--gris-oscuro);
@@ -273,11 +278,13 @@ nav
 .form-label
 {
   color:var(--blanco);
+  font-family: var(--secondary-font)
 }
 
 .message-input
 {
-  color: var(--blanco)
+  color: var(--blanco);
+  font-family: var(--secondary-font);
 }
 
 .message-input input {
