@@ -7,7 +7,6 @@ window.onload = () => {
   document.querySelectorAll(".project").forEach(element => {
     element.addEventListener("click", e => openModal(e));
   });
-  document.body.addEventListener("click", e => closeModal(e));
 };
 
 /** Esta funcion se llama cuando la persona hace click en la flecha derecha del carousel para navegar a la derecha */
@@ -80,18 +79,31 @@ function showNotification() {
 
 /** Esta funcion se llama cuando la persona hace click en cualquier porjecto del carousel */
 function openModal(e) {
-  document.querySelector(".modal-container").style.display = "flex";
-}
+  console.log("opening");
+  document.querySelector(".moldal-container").style.display = "flex";
+  document.body.addEventListener("click", e => closeModal(e), "once");
+  document.addEventListener("keydown", keyboardEvent)
+  function keyboardEvent(event)
+  {
+    //console.log("YOU PRESSED A KEY, YOU MONSTER. HERE'S THE INFO: " + event.keyCode,event.target, event);
+    if(event.keyCode == 27)
+    {
+      closeModal(event);
+      //console.log("YOU PRESSED THE ESC KEY, YOU MONSTER");
+    };
+  };
+};
 
 /** Esta funcion se llama para cerrar el modal */
 function closeModal(e) {
   // si el click occurio dentro del las imagenes del carousel o dentro del modal, no se cierra el modal
   if (
-    e.target.className.includes("project") ||
-    e.target.className === "modal"
+    (e.target.className.includes("modal")) && (e.type == "click")
   ) {
     return;
   } else {
-    document.querySelector(".modal-container").style.display = "none";
+    document.querySelector(".moldal-container").style.display = "none";
+    console.log("ing");
+    document.body.removeEventListener("click", e => closeModal(e));
   }
 }

@@ -218,7 +218,7 @@ nav
   outline: 3px solid var(--verde);
 }
 
-.project {
+.proiect-img {
   border-radius: 5px;
   border: 2px solid #000;
   display: inline-block;
@@ -302,7 +302,7 @@ input:focus
   padding: 8px;
 }
 
-.send-button {
+.modal-button, .send-button {
   align-items: center;
   background-color: var(--verde);
   border-radius: 5px;
@@ -315,6 +315,7 @@ input:focus
   width: 150px;
   margin-left: auto;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .send-button:focus
@@ -339,7 +340,7 @@ input:focus
   width: 300px;
 }
 
-.modal-container {
+.moldal-container {
   align-items: center;
   background-color: rgba(000, 000, 000, 0.2);
   display: none;
@@ -356,11 +357,25 @@ input:focus
   border: 2px solid #000;
   display: flex;
   flex-direction: column;
-  height: 700px;
+  height: 80%;
   justify-content: center;
   position: fixed;
-  top: 15%;
+  top: 2.5%;
   width: 700px;
+  padding: 56px;
+  overflow: scroll;
+}
+
+.modal .header
+{
+  
+  min-height: 200px;
+  text-align: center;
+}
+
+h3.header
+{
+  font-size: 30px;
 }
 
 .modal-project-image {
