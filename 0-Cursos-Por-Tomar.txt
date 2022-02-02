@@ -1,7 +1,0 @@
-Single-page-application with Vanilla JS
-Bash scripting 
-Expresiones regulares
-Node
-NPM
-Manipulación de DOM. 
-Regex

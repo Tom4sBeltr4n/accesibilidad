@@ -1,2 +1,0 @@
-./Asincronismo ./V8-y-el-navegador ./Accesibilidad
-find . -maxdepth 1 -type d >> 1-Class-list.txt && echo $(tail -n+3 1-Class-list.txt) > 1-Class-list.txt
