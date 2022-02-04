@@ -80,6 +80,12 @@ function showNotification() {
 /** Esta función se llama cuando la persona hace click en cualquier proyecto del carrusel */
 function openModal(e) {
   document.querySelector(".moldal-container").style.display = "flex";
+  console.log(e.target.getAttribute('src'));
+  console.log(e.target.tagName);
+  if(e.target.tagName.toLowerCase() == "img")
+  {
+    document.querySelector(".modal-project-image").setAttribute("src", e.target.getAttribute('src'))
+  };
   document.body.addEventListener("click", e => closeModal(e), "once");
   document.addEventListener("keydown", keyboardEvent)
   function keyboardEvent(event)
