@@ -9,7 +9,7 @@ window.onload = () => {
   });
 };
 
-/** Esta funcion se llama cuando la persona hace click en la flecha derecha del carousel para navegar a la derecha */
+/** Esta función se llama cuando la persona hace click en la flecha derecha del carrusel para navegar a la derecha */
 function clickRight() {
   const currentLeft = parseInt(
     getComputedStyle(document.querySelector(".project-container")).left,
@@ -18,7 +18,7 @@ function clickRight() {
   if (currentLeft < -270) { //si el valor de izquierda es menor a -270, para de mover el contenido
     return;
   }
-  let newValue = currentLeft - 270; //270 toma en cuenta el tamaño de la imagen mas sus margines
+  let newValue = currentLeft - 270; //270 toma en cuenta el tamaño de la imagen más sus márgenes
   document.querySelector(".project-container").style.left = `${newValue}px`;
   switch(newValue)
   {
@@ -39,13 +39,13 @@ function clickRight() {
   }
 }
 
-/** Esta funcion se llama cuando la persona hace click en la flecha izquierda del carousel para navegar a la izquierda */
+/** Esta función se llama cuando la persona hace click en la flecha izquierda del carrusel para navegar a la izquierda */
 function clickLeft() {
   const currentLeft = parseInt(
     getComputedStyle(document.querySelector(".project-container")).left,
     10
   );
-  if (currentLeft === 0) { //si el valor de izquiera es 0, retornar para no seguir movierno el contenido
+  if (currentLeft === 0) { //si el valor de izquiera es 0, retornar para no seguir moviendo el contenido
     return;
   }
   let newValue = currentLeft + 270;
@@ -69,7 +69,7 @@ function clickLeft() {
   }
 }
 
-/** Esta funcion se llama cuando la persona hace click en el boton de enviar del formulario de contacto */
+/** Esta función se llama cuando la persona hace click en el boton de enviar del formulario de contacto */
 function showNotification() {
   document.querySelector(".notification").style.display = "flex";
   setTimeout(function() {
@@ -77,33 +77,28 @@ function showNotification() {
   }, 3000);
 }
 
-/** Esta funcion se llama cuando la persona hace click en cualquier porjecto del carousel */
+/** Esta función se llama cuando la persona hace click en cualquier proyecto del carrusel */
 function openModal(e) {
-  console.log("opening");
   document.querySelector(".moldal-container").style.display = "flex";
   document.body.addEventListener("click", e => closeModal(e), "once");
   document.addEventListener("keydown", keyboardEvent)
   function keyboardEvent(event)
   {
-    //console.log("YOU PRESSED A KEY, YOU MONSTER. HERE'S THE INFO: " + event.keyCode,event.target, event);
     if(event.keyCode == 27)
     {
       closeModal(event);
-      //console.log("YOU PRESSED THE ESC KEY, YOU MONSTER");
     };
   };
 };
 
-/** Esta funcion se llama para cerrar el modal */
+/** Esta función se llama para cerrar el modal */
 function closeModal(e) {
-  // si el click occurio dentro del las imagenes del carousel o dentro del modal, no se cierra el modal
-  if (
-    (e.target.className.includes("modal")) && (e.type == "click")
-  ) {
+  // si el click occurió dentro del modal, no se cierra el modal. Alternativamente, sí
+  if ((e.target.className.includes("modal") || e.target.className.includes("header")) && (e.type == "click")) 
+  {
     return;
   } else {
     document.querySelector(".moldal-container").style.display = "none";
-    console.log("ing");
     document.body.removeEventListener("click", e => closeModal(e));
   }
 }

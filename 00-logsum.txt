@@ -32,7 +32,7 @@ Parte de la accesibilidad trata de homogeneizar la experiencia para los usuarios
 
 Manejando el foco del teclado - botones
 
-Parte de los deberes de un desarrollador que busca la accesibilidad de sus trabajos es que la experiencia de todos sus usuarios sea similar. Una manera de hacer esto es igualar el comportamiento de :focus y :hover en CSS. Otra parte de este trabajo puede consistir en utilizar botones para las interacciones en vez de divs, ya que en los botones, al darle "enter" mientras están enfocados, el efecto es el mismo que al darle click. 
+Parte de los deberes de un desarrollador que busca la accesibilidad de sus trabajos es que la experiencia de todos sus usuarios sea similar. Una manera de hacer esto es igualar el comportamiento de :focus y :hover en CSS. Otra parte de este trabajo puede consistir en utilizar botones para las interacciones en vez de divs, ya que en los botones, al darle "enter" mientras están enfocados, el efecto es el mismo que al darle click. Es bueno, además, darles a estos el estilo "cursor: pointer", es decir, que la forma del mouse cambie al pasar encima.
 
 Por último, hay que recordar que los sitios interactivos usan JS y es importante que un desarrollador lo implemente al darle accesibilidad a su sitio si este así lo requiere
 
@@ -48,6 +48,11 @@ Coordinando el foco del teclado con el foco de lectores de pantallas
 
 Cuando creamos carruseles accesibles, es importante recordar que los elementos no sólo han de ser seleccionables (tabindex >-1), sino que también han de ser legibles (el lector de pantalla los lee al usuario). Por ello es importante que se actualice, en este contexto, el atributo "aria-hidden", entre otras cosas.
 
+Manejando modales
+
+Un modal (ventana emergente que cambia de modo al usuario y el foco que este tiene) suele ser un efecto visual y que puede resultar poco accesible. Sin embargo, por mantener la homogeneidad y la práctica, podemos acercar a estos la accesibilidad. En particular, podemos recordar las bases (HTML semántico, alto contraste para el texto, etc.) y traer la experiencia del mouse al teclado. 
+
+Para llevar a cabo esto último, podemos usar los botones para los gatillos de modal y darles clases. Además, podemos usar scripts para que la tecla "esc" salga del modal. Por otra parte, un botón que diga "Salir" o "Cerrar" que lo cierre también añade accesibilidad.
 
 Notas:
 HTML:
