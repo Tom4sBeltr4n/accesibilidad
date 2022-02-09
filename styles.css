@@ -318,10 +318,11 @@ input:focus
   cursor: pointer;
 }
 
-.send-button:focus
+.send-button:focus, .moldal-button:focus
 {
-  outline: 3px solid var(--blanco);
+  border: 5px solid var(--gris-oscuro);
   padding: 8px;
+  outline: 3px solid var(--verde);
 }
 
 .notification {
@@ -385,6 +386,11 @@ h3.header
   height: 400px;
   margin: 16px auto;
   width: 550px;
+}
+
+.modal-project-image:focus, .modal>.header:focus
+{
+  outline: 3px solid var(--verde);
 }
 
 .moldal-button

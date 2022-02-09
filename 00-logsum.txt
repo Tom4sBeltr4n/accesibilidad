@@ -11,8 +11,8 @@ Las propiedades de ARIA comunican información normalmente visual que se caracte
 Estados: 
 Los estados de ARIA son atributos (como aria-hidden) que refleja cambios en el estado de un objeto que normalmente se comunica de modo visual. Esto permite que el lector de pantalla pueda saltarse ciertos elementos al navegar para el usuario
 
-Contrastes de color
 
+Contrastes de color
 El contraste es un elemento importante de la accesibilidad, pues ciertos tipos de daltonismo no pueden acceder a textos con bajo contraste. 
 
 Para analizar estos aspectos, el inspector Web de Google Chrome. Al dar click sobre una regla de color  de fuente dentro del panel de estilos, podremos ver el nivel de contraste que manejamos y comparar con los estándares de las WCAG. Un comportamiento similar sucede en Firefox DE (probablemente también en Firefox normal) al dar click sobre la misma regla. Sin embargo, esto no siempre funciona, por lo que recurrir al panel de accesibilidad y navegar el DOM puede ser buena idea. En algunos casos tendremos que activar pseudoclases para poder examinar completamente al elemento. 
@@ -21,38 +21,45 @@ En Chrome, además, te permite manipular el color y experimentar con él para ev
 
 Para corregir estos problemas, basta con ir al editor de CSS y cambiar el valor de la regla "color:" correspondiente por uno más distinguible del de fondo, o en su defecto, cambiar el color del fondo (aunque esto es menos preferible)
 
+
 Íconos
 Los íconos parecen ser un idioma universal; sin embargo, no estar asociado a ellos o no poder verlos lso puede hacer información inaccesible. Podemos usar texto para que los lectores de pantalla y gente no asociada a íconos los pueda reconocer. 
+
 
 Skip Links
 Cuando usamos visualmente un computador, no nos molesta que un sitio web tenga mucho contenido que no necesitemos, pues siempre podemos bajar con un mouse o usar ctrl+f si ya sabemos qué buscar. Sin embargo, este no es siempre el caso, y hay usuarios a los que, por ejemplo, la navegación les puede resultar como un tedio. A estos problemas les damos solución con los skip links; enlaces que permiten navegar en un sitio saltándose partes no principales.
 
+
 Estilos de foco y hover
 Parte de la accesibilidad trata de homogeneizar la experiencia para los usuarios distintos. Es por ello que debemos también homogeneizar los estilos con selección de teclado (focus) y apunte de mouse (hover). Para ello usaremos las pseudoclases respectivas. Además de homogeneizar, hay que hacer fácil que nuestros usuarios que no disponen de mouse (o deciden no hacerlo) puedan tener una buena experiencia en nuestro sitio.
 
-Manejando el foco del teclado - botones
 
+Manejando el foco del teclado - botones
 Parte de los deberes de un desarrollador que busca la accesibilidad de sus trabajos es que la experiencia de todos sus usuarios sea similar. Una manera de hacer esto es igualar el comportamiento de :focus y :hover en CSS. Otra parte de este trabajo puede consistir en utilizar botones para las interacciones en vez de divs, ya que en los botones, al darle "enter" mientras están enfocados, el efecto es el mismo que al darle click. Es bueno, además, darles a estos el estilo "cursor: pointer", es decir, que la forma del mouse cambie al pasar encima.
 
 Por último, hay que recordar que los sitios interactivos usan JS y es importante que un desarrollador lo implemente al darle accesibilidad a su sitio si este así lo requiere
 
-Manejando el foco del teclado - el carrusel.
 
+Manejando el foco del teclado - el carrusel.
 Al trabajar con accesibilidad, hay que recordar la importancia de la tecla "tabular" en usuarios invidentes o que no usen el mouse. Esta puede moverse entre los elementos de un sitio sin necesidad de mover el mouse a cada lugar. 
 
 La capacidad de un elemento para ser enfocado con el tabulador y su participación en la secuencia de selección se refleja en el atributo "tabindex". Este lo podemos alterar desde HTML. 
 
 Un valor negativo indica que sólo se puede enfocar vía scripts o el mouse. 0 indica que se va a enfocar en el orden natural de la página, siguiendo, igualmente, el comportamiento del elemento. Por último, un valor positivo indica que se va a enfocar antes que 0 y antes que cualquier valor positivo superior, pero después de cualquier inferior. No se pueden ubicar valores no númericos en este atributo. Es de cuidado.
 
-Coordinando el foco del teclado con el foco de lectores de pantallas
 
+Coordinando el foco del teclado con el foco de lectores de pantallas
 Cuando creamos carruseles accesibles, es importante recordar que los elementos no sólo han de ser seleccionables (tabindex >-1), sino que también han de ser legibles (el lector de pantalla los lee al usuario). Por ello es importante que se actualice, en este contexto, el atributo "aria-hidden", entre otras cosas.
 
-Manejando modales
 
+Manejando modales
 Un modal (ventana emergente que cambia de modo al usuario y el foco que este tiene) suele ser un efecto visual y que puede resultar poco accesible. Sin embargo, por mantener la homogeneidad y la práctica, podemos acercar a estos la accesibilidad. En particular, podemos recordar las bases (HTML semántico, alto contraste para el texto, etc.) y traer la experiencia del mouse al teclado. 
 
 Para llevar a cabo esto último, podemos usar los botones para los gatillos de modal y darles clases. Además, podemos usar scripts para que la tecla "esc" salga del modal. Por otra parte, un botón que diga "Salir" o "Cerrar" que lo cierre también añade accesibilidad.
+
+
+Mejorando la accesibilidad con teclado de nuestro modal.
+Parte de dar accesibilidad de teclado a un sitio es que los enfoques correspondan con la situación de la pantalla, en especial cuando utilizamos modales. Para ello, podemos usar ids y scripts.
 
 Notas:
 HTML:

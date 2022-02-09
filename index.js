@@ -1,3 +1,5 @@
+let projectChoice = 0;
+
 window.onload = () => {
   document.querySelector(".arrow-right").addEventListener("click", clickRight);
   document.querySelector(".arrow-left").addEventListener("click", clickLeft);
@@ -80,11 +82,15 @@ function showNotification() {
 /** Esta función se llama cuando la persona hace click en cualquier proyecto del carrusel */
 function openModal(e) {
   document.querySelector(".moldal-container").style.display = "flex";
-  console.log(e.target.getAttribute('src'));
-  console.log(e.target.tagName);
+  document.getElementById("modal-header").focus();
   if(e.target.tagName.toLowerCase() == "img")
   {
-    document.querySelector(".modal-project-image").setAttribute("src", e.target.getAttribute('src'))
+    document.querySelector(".modal-project-image").setAttribute("src", e.target.getAttribute('src'));
+    projectChoice = e.target.parentElement;
+  } else if(e.target.tagName.toLowerCase() == "button")
+  {
+    projectChoice = e.target;
+    document.querySelector(".modal-project-image").setAttribute("src", e.target.children.item(0).getAttribute('src'));
   };
   document.body.addEventListener("click", e => closeModal(e), "once");
   document.addEventListener("keydown", keyboardEvent)
@@ -106,5 +112,6 @@ function closeModal(e) {
   } else {
     document.querySelector(".moldal-container").style.display = "none";
     document.body.removeEventListener("click", e => closeModal(e));
+    projectChoice.focus();
   }
 }
