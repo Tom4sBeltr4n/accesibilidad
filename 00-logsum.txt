@@ -59,7 +59,15 @@ Para llevar a cabo esto último, podemos usar los botones para los gatillos de m
 
 
 Mejorando la accesibilidad con teclado de nuestro modal.
-Parte de dar accesibilidad de teclado a un sitio es que los enfoques correspondan con la situación de la pantalla, en especial cuando utilizamos modales. Para ello, podemos usar ids y scripts.
+Parte de dar accesibilidad de teclado a un sitio es que los enfoques correspondan con la situación de la pantalla, en especial cuando utilizamos modales. Para ello, podemos usar ids y scripts, de tal forma que podamos manejar en JavaScript el enfoque del usuario cuando abra un modal o actualice de cualquier otro modo la apariencia del sitio.
+
+
+Ayudando a nuestros usuarios a interactuar correctamente con nuestro sitio.
+Al necesitar información o interacción con el usuario, es adecuado tratar de ser explícitos, para evitar malos entendidos. Esto es parte de la accesibilidad; asegurarnos que todos entiendan lo mismo, lo que queremos decirles.
+
+Ayudando a nuestros usuarios a interactuar correctamente con nuestro sitio.
+Al necesitar información o interacción con el usuario, es adecuado tratar de ser explícitos, para evitar malos entendidos. Esto es parte de la accesibilidad; asegurarnos que todos entiendan lo mismo, lo que queremos decirles. Otra parte de esto es validar un formulario o cualquier contenido que provenga del usuario.
+
 
 Notas:
 HTML:
@@ -70,5 +78,15 @@ CSS:
 .nav-item a:focus
 {
 /* background-color: var(--verde); 
-  this rule must be used with the focus-within pseudo-class. The reason is that we want to edit the bgcolor of the nav-item class element instead of just the anchor, but we also want to trigger it with the focusing action on one of its children. */
+  this rule must be used with the focus-within pseudo-class. The reason is that we want to edit the bgcolor of the nav-item class element instead of just the anchor, but we also want to trigger it with the focusing action on one of its children. As follows: */
+  .nav-item:focus-within
+  {
+    background-color: var(--verde);
+  }
+  
+}
+
+span
+{
+  /* remember not to use color to communicate meaning */
 }
