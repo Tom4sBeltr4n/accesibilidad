@@ -76,9 +76,13 @@ function validateForm(e)
 {
   e.preventDefault();
   const nameField = document.getElementById("name");
-  if(nameField.value === "")
+  const emailField = document.getElementById("mail");
+  const messageField = document.getElementById("message");
+  if(nameField.value === "" || nameField.value.some((item)=>{return !isNaN(parseInt(item))}))
   {
-    document.getElementById("name-error").innerHTML = "ADVERTENCIA: Para enviar el formulario es necesario introducirle un nombre"
+    document.getElementById("name-error").innerHTML = "ADVERTENCIA: Para enviar el formulario es necesario introducirle un nombre. Por favor no introduzcas números"
+  } else if(emailField.value){
+    console.log(2)
   } else {
     showNotification();
   }
