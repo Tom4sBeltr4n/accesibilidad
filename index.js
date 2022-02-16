@@ -78,11 +78,21 @@ function validateForm(e)
   const nameField = document.getElementById("name");
   const emailField = document.getElementById("mail");
   const messageField = document.getElementById("message");
-  if(nameField.value === "" || nameField.value.some((item)=>{return !isNaN(parseInt(item))}))
+  const nameFieldArray = Array.from(nameField.value);
+  const emailFieldArray = Array.from(emailField.value);
+  if(nameField.value === "")
   {
-    document.getElementById("name-error").innerHTML = "ADVERTENCIA: Para enviar el formulario es necesario introducirle un nombre. Por favor no introduzcas números"
-  } else if(emailField.value){
-    console.log(2)
+    document.getElementById("name-error").textContent = "ADVERTENCIA: Para enviar el formulario es necesario introducirle un nombre.";
+    setTimeout(()=>{document.getElementById("name-error").textContent = "";return undefined},4000)
+  } else if(nameFieldArray.some((item)=>{return !isNaN(parseInt(item))})) {
+    document.getElementById("name-error").textContent = "Por favor no introduzcas números en tu nombre";
+    setTimeout(()=>{document.getElementById("name-error").textContent = "";return undefined},4000)
+  }else if(!emailField.value || !emailFieldArray.includes("@",1) || !emailFieldArray.slice(emailFieldArray.indexOf("@")).includes(".",2) || emailFieldArray.slice(emailFieldArray.indexOf("@")).length < 5){
+    document.getElementById("email-error").textContent = "Introduce, por favor, una dirección de correo electrónico apropiada";
+    setTimeout(()=>{document.getElementById("email-error").textContent = "";return undefined},4000)
+  } else if(!messageField) {
+    document.getElementById("message-error").textContent = "¡No olvides el mensaje!";
+    setTimeout(()=>{document.getElementById("message-error").textContent = "";return undefined},4000)
   } else {
     showNotification();
   }
