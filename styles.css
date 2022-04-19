@@ -327,6 +327,7 @@ input:focus
 
 span
 {
+  padding-bottom: 10px;
   color: var(--blanco);
   /* remember not to use color to communicate meaning */
   font-family: var(--secondary-font);

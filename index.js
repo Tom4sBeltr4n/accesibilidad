@@ -78,6 +78,7 @@ function validateForm(e)
   const nameField = document.getElementById("name");
   const emailField = document.getElementById("mail");
   const messageField = document.getElementById("message");
+  const messageFieldValue = messageField.value;
   const nameFieldArray = Array.from(nameField.value);
   const emailFieldArray = Array.from(emailField.value);
   if(nameField.value === "")
@@ -90,7 +91,7 @@ function validateForm(e)
   }else if(!emailField.value || !emailFieldArray.includes("@",1) || !emailFieldArray.slice(emailFieldArray.indexOf("@")).includes(".",2) || emailFieldArray.slice(emailFieldArray.indexOf("@")).length < 5){
     document.getElementById("email-error").textContent = "Introduce, por favor, una dirección de correo electrónico apropiada";
     setTimeout(()=>{document.getElementById("email-error").textContent = "";return undefined},4000)
-  } else if(!messageField) {
+  } else if(!messageFieldValue) {
     document.getElementById("message-error").textContent = "¡No olvides el mensaje!";
     setTimeout(()=>{document.getElementById("message-error").textContent = "";return undefined},4000)
   } else {
